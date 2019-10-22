@@ -5,7 +5,6 @@ namespace ether\seo\fields;
 use craft\base\ElementInterface;
 use craft\base\Field;
 use craft\base\PreviewableFieldInterface;
-use craft\elements\Category;
 use craft\elements\Entry;
 use craft\elements\GlobalSet;
 use craft\helpers\Json;
@@ -228,7 +227,7 @@ class SeoField extends Field implements PreviewableFieldInterface
 			'seoHandle' => $this->handle,
 		];
 
-		if ($element instanceof Category)
+		if ($element->groupId)
 			$renderData['groupId'] = $element->groupId;
 		elseif ($element instanceof GlobalSet)
 			$renderData['typeId'] = null;
